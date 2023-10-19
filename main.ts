@@ -62,8 +62,13 @@ input.onButtonPressed(Button.B, function () {
     turtle.forward(1)
 })
 input.onPinPressed(TouchPin.P1, function () {
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < 10; index++) {
         turtle.forward(1)
+        for (let index = 0; index < 10; index++) {
+            turtle.forward(1)
+            basic.pause(100)
+            turtle.back(1)
+        }
         basic.pause(100)
         turtle.forward(1)
     }
