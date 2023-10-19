@@ -11,7 +11,9 @@
         "microbit-pxt-timeanddate": "github:bsiever/microbit-pxt-timeanddate#v2.0.33",
         "pxt-katakana": "github:mbitfun/pxt-katakana#v1.0.16",
         "microbit-pxt-clicks": "github:bsiever/microbit-pxt-clicks#v0.2.2",
-        "smarthome-kit": "github:tinkertanker/pxt-smarthome#v2.2.1"
+        "servo": "*",
+        "audio-recording": "*",
+        "microturtle": "github:microsoft/pxt-microturtle#v0.0.9"
     },
     "files": [
         "main.blocks",

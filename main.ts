@@ -2,11 +2,7 @@ enum RadioMessage {
     message1 = 49434
 }
 input.onPinPressed(TouchPin.P0, function () {
-    basic.showString("Line code activated")
-    linebeacon.startWithDeviceMessage(
-    "MC GX",
-    "100111001"
-    )
+    linebeacon.start("MC GX 100222001")
 })
 function GX_Code_Engine_start () {
     serial.writeLine("GX 20009")
@@ -18,6 +14,7 @@ function GX_Code_Engine_start () {
             . . . . .
             . . . . .
             `)
+        basic.pause(500)
         basic.showLeds(`
             . . . . .
             # . # . #
@@ -25,6 +22,7 @@ function GX_Code_Engine_start () {
             . . . . .
             . . . . .
             `)
+        basic.pause(500)
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -32,6 +30,7 @@ function GX_Code_Engine_start () {
             . # . # .
             . . . . .
             `)
+        basic.pause(500)
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -43,21 +42,34 @@ function GX_Code_Engine_start () {
         basic.showNumber(10011001)
         basic.clearScreen()
         basic.showString("GX engine Starting")
-        timeanddate.setTime(8, 37, 0, timeanddate.MornNight.AM)
-        control.waitMicros(4)
     }
 }
+buttonClicks.onButtonDoubleClicked(buttonClicks.AorB.A, function () {
+	
+})
 input.onButtonPressed(Button.A, function () {
-    basic.showString("Cast")
-    radio.setGroup(1)
-    radio.sendMessage(RadioMessage.message1)
+    turtle.setBrightness(128)
+    turtle.back(1)
 })
 input.onButtonPressed(Button.AB, function () {
-    basic.showString("Line Code closed")
-    linebeacon.stop()
+    linebeacon.startWithDeviceMessage(
+    "0f0f0f0f0f",
+    "1a2b3c4d5e6f70809010a0b0c0"
+    )
 })
-radio.onReceivedMessage(RadioMessage.message1, function () {
-    radio.sendString("Hi")
+input.onButtonPressed(Button.B, function () {
+    turtle.setBrightness(128)
+    turtle.forward(1)
+})
+input.onPinPressed(TouchPin.P1, function () {
+    for (let index = 0; index < 100; index++) {
+        turtle.forward(1)
+        basic.pause(100)
+        turtle.forward(1)
+    }
+})
+buttonClicks.onButtonDoubleClicked(buttonClicks.AorB.B, function () {
+	
 })
 GX_Code_Engine_start()
 basic.forever(function () {
