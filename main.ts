@@ -1,11 +1,8 @@
 enum RadioMessage {
     message1 = 49434
 }
-input.onPinPressed(TouchPin.P0, function () {
-	
-})
 function GX_Code_Engine_start () {
-    serial.writeLine("GX 20009")
+    serial.writeLine(" MicroComputer 480")
     basic.showLeds(`
         # . # . #
         . # . # .
@@ -38,42 +35,37 @@ function GX_Code_Engine_start () {
         . # . # .
         `)
     basic.clearScreen()
-    basic.showNumber(10011001)
-    basic.clearScreen()
-    basic.showString("GX engine Starting")
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . # #
-        # . . . #
-        . # # # .
-        `)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . . #
-        # . . . #
-        . # # # .
-        `)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . # #
-        # . . . #
-        . # # # .
-        `)
+    basic.showString("Microcomputer 480 (C) 2023 TMB LTD")
 }
-buttonClicks.onButtonDoubleClicked(buttonClicks.AorB.A, function () {
-	
-})
 input.onButtonPressed(Button.A, function () {
-	
+    if (true) {
+        basic.clearScreen()
+        basic.showString("error 1020210020")
+    } else {
+        for (let index = 0; index < 4; index++) {
+            basic.showLeds(`
+                . # # # .
+                # . . . #
+                . # . # .
+                # . . . #
+                . # . # .
+                `)
+        }
+    }
 })
+function serial_code () {
+    serial.redirect(
+    SerialPin.P0,
+    SerialPin.P1,
+    BaudRate.BaudRate115200
+    )
+}
 input.onPinPressed(TouchPin.P2, function () {
     if (true) {
-        if (true) {
-            basic.showString("Welcome to the light optimizer")
-            turtle.setBrightness(100000)
+        for (let index = 0; index < 4; index++) {
+            let list: number[] = []
+            text_list = ["T", "M", "B"]
+            list.unshift(list.removeAt(10))
         }
     }
 })
@@ -83,86 +75,49 @@ input.onButtonPressed(Button.AB, function () {
     "1a2b3c4d5e6f70809010a0b0c0"
     )
 })
-input.onButtonPressed(Button.B, function () {
-    turtle.setBrightness(128)
-    turtle.forward(1)
-})
 input.onPinPressed(TouchPin.P1, function () {
     basic.showString("ScreenSaver on")
-    for (let index = 0; index < 10; index++) {
-        turtle.forward(1)
-        for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 20; index++) {
+        if (true) {
             turtle.forward(1)
             if (true) {
-                turtle.forward(1)
-                basic.pause(100)
-                turtle.back(1)
-            }
-        }
-        for (let index = 0; index < 10; index++) {
-            if (true) {
-                basic.pause(100)
-                turtle.forward(1)
+                for (let index = 0; index < 20; index++) {
+                    turtle.forward(1)
+                    if (true) {
+                        turtle.forward(1)
+                        basic.pause(100)
+                        turtle.back(1)
+                    }
+                    if (true) {
+                        for (let index = 0; index < 20; index++) {
+                            if (true) {
+                                basic.pause(100)
+                                turtle.forward(1)
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 })
-buttonClicks.onButtonDoubleClicked(buttonClicks.AorB.B, function () {
-	
+pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
+    control.waitForEvent(10, 5)
+    control.raiseEvent(
+    EventBusSource.MICROBIT_ID_BUTTON_A,
+    EventBusValue.MICROBIT_EVT_ANY
+    )
 })
-music.onEvent(MusicEvent.MelodyNotePlayed, function () {
-	
+serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {
+    for (let index = 0; index < 4; index++) {
+        basic.showString("Go to TMB LTD.com for more instructions")
+    }
 })
+let text_list: string[] = []
 GX_Code_Engine_start()
 basic.forever(function () {
     radio.setGroup(1)
 })
-loops.everyInterval(3600000, function () {
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . # #
-        # . . . #
-        . # # # .
-        `)
-    basic.pause(5000)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . . #
-        # . . . #
-        . # # # .
-        `)
-    basic.pause(5000)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . # #
-        # . . . #
-        . # # # .
-        `)
-    basic.pause(5000)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . . #
-        # . . . #
-        . # # # .
-        `)
-    basic.pause(5000)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . # #
-        # . . . #
-        . # # # .
-        `)
-    basic.pause(5000)
-    basic.showLeds(`
-        . # # # .
-        # . . . #
-        # # . . #
-        # . . . #
-        . # # # .
-        `)
+control.inBackground(function () {
+    basic.showString("Created with MakeCode for MicroBit")
 })
