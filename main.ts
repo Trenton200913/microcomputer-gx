@@ -1,6 +1,9 @@
 enum RadioMessage {
     message1 = 49434
 }
+input.onPinPressed(TouchPin.P0, function () {
+    serial.writeLine("https://sites.google.com/stu.ballard.kyschools.us/tmb-ltd/home Are Website")
+})
 function GX_Code_Engine_start () {
     serial.writeLine(" MicroComputer 480")
     basic.showLeds(`
@@ -44,7 +47,7 @@ input.onButtonPressed(Button.A, function () {
     } else {
         for (let index = 0; index < 4; index++) {
             basic.showLeds(`
-                . # # # .
+                . # . # .
                 # . . . #
                 . # . # .
                 # . . . #
@@ -63,9 +66,7 @@ function serial_code () {
 input.onPinPressed(TouchPin.P2, function () {
     if (true) {
         for (let index = 0; index < 4; index++) {
-            let list: number[] = []
-            text_list = ["T", "M", "B"]
-            list.unshift(list.removeAt(10))
+            basic.showString("Un plug the USB from the OS provider")
         }
     }
 })
@@ -113,8 +114,18 @@ serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {
         basic.showString("Go to TMB LTD.com for more instructions")
     }
 })
-let text_list: string[] = []
 GX_Code_Engine_start()
+loops.everyInterval(60000, function () {
+    for (let index = 0; index < 4; index++) {
+        basic.showLeds(`
+            . # # # .
+            # . . . #
+            # # . # #
+            # . . . #
+            . # # # .
+            `)
+    }
+})
 basic.forever(function () {
     radio.setGroup(1)
 })
