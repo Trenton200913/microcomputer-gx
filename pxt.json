@@ -14,7 +14,8 @@
         "servo": "*",
         "audio-recording": "*",
         "microturtle": "github:microsoft/pxt-microturtle#v0.0.9",
-        "cutebot": "github:elecfreaks/pxt-cutebot#v6.1.13"
+        "cutebot": "github:elecfreaks/pxt-cutebot#v6.1.13",
+        "smarthome-kit": "github:tinkertanker/pxt-smarthome#v2.2.1"
     },
     "files": [
         "main.blocks",

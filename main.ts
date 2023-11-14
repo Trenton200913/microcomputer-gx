@@ -2,7 +2,7 @@ enum RadioMessage {
     message1 = 49434
 }
 input.onPinPressed(TouchPin.P0, function () {
-    serial.writeLine("https://sites.google.com/stu.ballard.kyschools.us/tmb-ltd/home Are Website")
+    serial.writeLine("https://sites.google.com/stu.ballard.kyschools.us/tmb-ltd/home         Are Website")
 })
 function GX_Code_Engine_start () {
     serial.writeLine(" MicroComputer 480")
@@ -41,19 +41,12 @@ function GX_Code_Engine_start () {
     basic.showString("Microcomputer 480 (C) 2023 TMB LTD")
 }
 input.onButtonPressed(Button.A, function () {
-    if (true) {
-        basic.clearScreen()
-        basic.showString("error 1020210020")
+    if (("A" as any) > ("B" as any)) {
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+    } else if (("A" as any) < ("B" as any)) {
+        music.play(music.tonePlayable(988, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     } else {
-        for (let index = 0; index < 4; index++) {
-            basic.showLeds(`
-                . # . # .
-                # . . . #
-                . # . # .
-                # . . . #
-                . # . # .
-                `)
-        }
+    	
     }
 })
 function serial_code () {
@@ -65,16 +58,11 @@ function serial_code () {
 }
 input.onPinPressed(TouchPin.P2, function () {
     if (true) {
-        for (let index = 0; index < 4; index++) {
-            basic.showString("Un plug the USB from the OS provider")
-        }
+    	
     }
 })
 input.onButtonPressed(Button.AB, function () {
-    linebeacon.startWithDeviceMessage(
-    "0f0f0f0f0f",
-    "1a2b3c4d5e6f70809010a0b0c0"
-    )
+	
 })
 input.onPinPressed(TouchPin.P1, function () {
     basic.showString("ScreenSaver on")
@@ -115,20 +103,6 @@ serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {
     }
 })
 GX_Code_Engine_start()
-loops.everyInterval(60000, function () {
-    for (let index = 0; index < 4; index++) {
-        basic.showLeds(`
-            . # # # .
-            # . . . #
-            # # . # #
-            # . . . #
-            . # # # .
-            `)
-    }
-})
 basic.forever(function () {
     radio.setGroup(1)
-})
-control.inBackground(function () {
-    basic.showString("Created with MakeCode for MicroBit")
 })
