@@ -41,24 +41,63 @@ function GX_Code_Engine_start () {
     basic.showString("Microcomputer 480 (C) 2023 TMB LTD")
 }
 input.onButtonPressed(Button.A, function () {
-    if (("A" as any) > ("B" as any)) {
+    if (true) {
         music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    } else if (("A" as any) < ("B" as any)) {
-        music.play(music.tonePlayable(988, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    } else {
-    	
+        turtle.forward(1)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        turtle.forward(1)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        turtle.forward(1)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        turtle.forward(2)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        turtle.forward(2)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        turtle.forward(2)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     }
 })
-function serial_code () {
-    serial.redirect(
-    SerialPin.P0,
-    SerialPin.P1,
-    BaudRate.BaudRate115200
-    )
-}
 input.onPinPressed(TouchPin.P2, function () {
     if (true) {
-    	
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # # . # #
+            # . . . #
+            # # # # #
+            `)
+    } else if (false) {
+        basic.showLeds(`
+            . # # # .
+            # . . . #
+            # # . # #
+            # . . . #
+            . # # # .
+            `)
+    } else if (false) {
+        basic.showLeds(`
+            . # # # .
+            # . . . #
+            # . . . #
+            # . . . #
+            . # # # .
+            `)
+    } else if (false) {
+        basic.showLeds(`
+            . # # # .
+            . . . . .
+            . . . . .
+            . . . . .
+            . # # # .
+            `)
+    } else if (false) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . # # # .
+            `)
     }
 })
 input.onButtonPressed(Button.AB, function () {
@@ -96,11 +135,6 @@ pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
     EventBusSource.MICROBIT_ID_BUTTON_A,
     EventBusValue.MICROBIT_EVT_ANY
     )
-})
-serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {
-    for (let index = 0; index < 4; index++) {
-        basic.showString("Go to TMB LTD.com for more instructions")
-    }
 })
 GX_Code_Engine_start()
 basic.forever(function () {
