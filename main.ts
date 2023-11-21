@@ -66,7 +66,7 @@ input.onPinPressed(TouchPin.P2, function () {
             # . . . #
             # # # # #
             `)
-    } else if (false) {
+    } else if (0 == 0) {
         basic.showLeds(`
             . # # # .
             # . . . #
@@ -74,7 +74,7 @@ input.onPinPressed(TouchPin.P2, function () {
             # . . . #
             . # # # .
             `)
-    } else if (false) {
+    } else if (0 == 0) {
         basic.showLeds(`
             . # # # .
             # . . . #
@@ -82,7 +82,7 @@ input.onPinPressed(TouchPin.P2, function () {
             # . . . #
             . # # # .
             `)
-    } else if (false) {
+    } else if (0 == 0) {
         basic.showLeds(`
             . # # # .
             . . . . .
@@ -90,7 +90,7 @@ input.onPinPressed(TouchPin.P2, function () {
             . . . . .
             . # # # .
             `)
-    } else if (false) {
+    } else if (0 == 0) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -102,6 +102,31 @@ input.onPinPressed(TouchPin.P2, function () {
 })
 input.onButtonPressed(Button.AB, function () {
 	
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.clearScreen()
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.clearScreen()
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
 })
 input.onPinPressed(TouchPin.P1, function () {
     basic.showString("ScreenSaver on")
