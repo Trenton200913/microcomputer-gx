@@ -15,7 +15,8 @@
         "audio-recording": "*",
         "microturtle": "github:microsoft/pxt-microturtle#v0.0.9",
         "cutebot": "github:elecfreaks/pxt-cutebot#v6.1.13",
-        "smarthome-kit": "github:tinkertanker/pxt-smarthome#v2.2.1"
+        "smarthome-kit": "github:tinkertanker/pxt-smarthome#v2.2.1",
+        "pxt-morse": "github:bsiever/pxt-morse#v2.0.0"
     },
     "files": [
         "main.blocks",
@@ -26,7 +27,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.22",
+        "target": "6.0.25",
         "targetId": "microbit"
     },
     "supportedTargets": [
